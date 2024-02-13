@@ -3,29 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title> Oblig 1 </title>
-    <h1> Bestilling av kinobiletter </h1>
+    <script src = "Index.js"></script>
+</head>
+<body>
+    <h1> Bestilling av kinobilletter </h1>
 
-      Velg film :
-      <select id = "film">
-          <option></option>
+    <section>
+        <label for = "film"> Velg film her: </label>
+      <select id = "film" onChange = "VelgFilm()">
+          <option> Velg film her </option>
           <option> Titanic </option>
           <option> The Notebook</option>
           <option> Harry potter and the Goblet of fire</option>
       </select>
-    <br>
+    </section>
 
-</head>
-<body>
+<br>
+
+    <section>
+       <label for = "antall"> Antall :  </label>
+        <input type = "text" id = "antall" onChange = "Antall()">
+    </section>
+<br>
+
 <table>
   <tr><td> Fornavn </td><td> <input type = "text" id="fornavn"/></td></tr>
-  <tr><td >Etternavn </td><td> <input type = "text" id="etternavn"/></td></tr>
+  <tr><td>Etternavn </td><td> <input type = "text" id="etternavn"/></td></tr>
   <tr><td> Telefonnr </td><td> <input type = "text" id="telefonnr"/></td></tr>
   <tr><td> Epost </td><td> <input type = "text" id="epost"/></td></tr>
-  <tr><td><button onclick = "kjøpbillett ()"> Kjøp billett</button></td></tr>
 </table>
 
+
+    <br>
+    <section>
+        <button onclick ="kjøpeBillett()"> Kjøp billett </button>
+        <div id = "kjøpBillett" onclick ="kjøpeBillett()"></div>
+    </section>
+
 <h2> Alle billetter</h2>
-<div id = "visLagredeBilletter"></div>
-<button onclick = "SlettAlleBilletter()"> Slett alle billettene</button>
+    <div id ="viseKjøpteBilletter"></div>
+
+
+<section>
+<button onclick = "slettAlleBilletter()"> Slett alle billettene</button>
+    <div id = "slettAlleBilletter" onClick = "slettAlleBilletter"></div>
+</section>
+
 </body>
 </html>

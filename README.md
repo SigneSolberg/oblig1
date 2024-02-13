@@ -5,9 +5,11 @@ GitHub brukernavn: SigneSolberg
 
 Github repo URL: https://github.com/SigneSolberg/oblig1
 
-Fullt navn: 
+Fullt navn: Signe Solberg Jørgensen
 
 Kort beskrivelse av applikasjon: 
 
-Kjøp og salg av kinobilletter. 
+Har laget en applikasjon for kjøp og salg av kinobiletter. 
+Man kan velgefilm, kjøpe billett, se sine kjøpte billetter
+og slette de kjøpte billettene. 
 
