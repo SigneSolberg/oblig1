@@ -1,61 +1,69 @@
 
-//det skal lages en javascript-applikasjon som registerer kjlo av kinobiletter
-//Det er kun tre filer som du selc skal skrive eller redigdere. En HTML-fil, en javaScript-fil
-//og en README.med-fil. Du skal likevel levere et komplett prosjekt hvor disse tre filene
-//ligger på rikitg sted i mappe-og filstrukturen(altså HTML-og javascriptfil, under
-// "<projektnavn>/scr/main/resources/static" og README.MD I ROTKATALOGEN.
 
-//Etter at kanppen "kjøp bilett" er trykket skal biletten lagres som et obejkt i array.
-//deretter skal arrayet listes ut under "alle billeyyer".etter det er registret en bestilling
-//skal alle inputfelt "blankes" slik at en ny bilett kan registreres.
-//Knappen "slett alle bilettene" skal slette alle billettene(tømme arrayet).
-
-//Det skal også lages en input-valdiering som sjekker at alle inputfeltene inneholder noe
-
-<script type = "application/javascript"></script>
 const kinoBilletter=[];
 
-    function VelgFilm() {
-    ut += "<br/> FilmValg : " + document.getElementById("film").value;
+     //funkjson for å velge film
+    function velgFilm() {
+    ut += "FilmValg:" + document.getElementById("film").value;
+
 }
-function Antall(){
-        document.getElementById("Antall").value;
+//Funksjonen hvor man velger antall billetter
+function antall(){
+        document.getElementById("antall").value;
+
 }
+//Funksjon for å kjøpebillet samt input av tekst
     function kjøpeBillett() {
+    const film = document.getElementById("film").value;
+    const antall= document.getElementById("antall").value;
     const fornavn = document.getElementById("fornavn").value;
     const etternavn = document.getElementById("etternavn").value;
     const telefonnr = document.getElementById("telefonnr").value;
     const epost = document.getElementById("epost").value;
 
     const person = {
+    film : film,
+    antall : antall,
     fornavn : fornavn,
     etternavn : etternavn,
     telefonnr : telefonnr,
     epost : epost,
     };
 
+ //skriver kode for å tømme arrayet
  kinoBilletter.push(person);
 
+ document.getElementById("film").value ="";
+ document.getElementById("antall").value ="";
  document.getElementById("fornavn").value ="";
  document.getElementById("etternavn").value = "";
  document.getElementById("telefonnr").value= "";
   document.getElementById("epost").value= "";
   viskjøptBillett()}
 
-//skriver kode for å tømme arrayet
-
 
 function viskjøptBillett() {
-    let ut = "<table><tr>" + "<th>Fornavn</th><th>Etternavn</th><th>Telefonnr</th><th>Epost</th>" + "</tr>";
+    let ut = "<table><tr>" + "<th>Film</th><th>Antall</th><th>Fornavn</th><th>Etternavn</th><th>Telefonnr</th><th>Epost</th>" + "</tr>";
     for (let k of kinoBilletter) {
         ut += "<tr>";
-        ut += "<td>" + k.fornavn + "</td><td>" + k.etternavn + "</td><td>" + k.telefonnr + "</td><td>" + k.epost + "</td>";
+        ut += "<td>" +k.film+ "</td><td>"+ k.antall+ "</td><td>"+ k.fornavn + "</td><td>" + k.etternavn + "</td><td>" + k.telefonnr + "</td><td>" + k.epost + "</td>";
         ut += "</tr>";
     }
-    ut+= "</table>";
+
     document.getElementById("viseKjøpteBilletter").innerHTML = ut;
+
 }
-    //oppretter funskjon for å vise de kjøpebillettene
+    //oppretter funskjon for å vise de kjøpte billettene
+function slettAlleBilletter(){
+    kinoBilletter.length = 0;{
+        document.getElementById("viseKjøpteBilletter").innerHTML = "Alle billettene har blitt slettet";
+    }
+}
+
+
+
+
+
 
 
 

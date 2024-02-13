@@ -5,13 +5,15 @@
     <title> Oblig 1 </title>
     <script src = "Index.js"></script>
 </head>
+
 <body>
     <h1> Bestilling av kinobilletter </h1>
 
+    <!--Her oppretter jeg en nedtrekks tabell for å kunne velge film .-->
     <section>
-        <label for = "film"> Velg film her: </label>
-      <select id = "film" onChange = "VelgFilm()">
-          <option> Velg film her </option>
+        <label for = "film"> Velg film : </label>
+      <select id = "film" onChange = "velgFilm()">
+          <option selected disabled> velg film her </option>
           <option> Titanic </option>
           <option> The Notebook</option>
           <option> Harry potter and the Goblet of fire</option>
@@ -22,23 +24,26 @@
 
     <section>
        <label for = "antall"> Antall :  </label>
-        <input type = "text" id = "antall" onChange = "Antall()">
+        <input type = "text" id = "antall" onchange = "antall()">
     </section>
-<br>
 
+<br>
+    <!--Her oppretter jeg tabell sånn at fornavn,etternavn osv kommer under hverandre.-->
 <table>
-  <tr><td> Fornavn </td><td> <input type = "text" id="fornavn"/></td></tr>
-  <tr><td>Etternavn </td><td> <input type = "text" id="etternavn"/></td></tr>
-  <tr><td> Telefonnr </td><td> <input type = "text" id="telefonnr"/></td></tr>
-  <tr><td> Epost </td><td> <input type = "text" id="epost"/></td></tr>
+  <tr><td>Fornavn</td><td> <input type = "text" id="fornavn"/></td></tr>
+  <tr><td>Etternavn</td><td><input type = "text" id="etternavn"/></td></tr>
+  <tr><td>Telefonnr</td><td><input type = "text" id="telefonnr"/></td></tr>
+  <tr><td>Epost</td><td><input type = "text" id="epost"/></td></tr>
 </table>
 
 
+    <!--oppretter en knapp for å kjøpe billett-->
     <br>
     <section>
         <button onclick ="kjøpeBillett()"> Kjøp billett </button>
         <div id = "kjøpBillett" onclick ="kjøpeBillett()"></div>
     </section>
+
 
 <h2> Alle billetter</h2>
     <div id ="viseKjøpteBilletter"></div>
@@ -46,8 +51,8 @@
 
 <section>
 <button onclick = "slettAlleBilletter()"> Slett alle billettene</button>
-    <div id = "slettAlleBilletter" onClick = "slettAlleBilletter"></div>
 </section>
+    <!--Oppretter en knapp for å kunne slette alle billettene-->
 
 </body>
 </html>
