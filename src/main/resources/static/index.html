@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title> Oblig 1 </title>
-    <script src = "Index.js"></script>
+    <script src ="Index.js"></script>
 </head>
-
 <body>
     <h1> Bestilling av kinobilletter </h1>
 
@@ -22,22 +21,21 @@
     </section>
 
 <br>
-    <!-- Her oppretter jeg en input hvor man kan skrive inn antall-->
     <section>
        <label for = "antall"> Antall :  </label>
         <input type = "text" id = "antall" style = "width : 10px;>" onchange = "antall()">
-        <div id ="feilAntall"></div>
+        <div id ="feilAntall" style="color:red"></div>
     </section>
 <br>
+
     <!--Her oppretter jeg tabell sånn at fornavn,etternavn osv kommer under hverandre og legger inn feilmeldinger.-->
 <table>
-  <tr><td>Fornavn</td><td><input type ="text" id="fornavn"/></td> <td><div id ="feilFornavn"></div></td></tr>
-  <tr><td>Etternavn</td><td><input type = "text" id="etternavn"/></td> <td><div id ="feilEtternavn"></div></td></tr>
-  <tr><td>Telefonnr</td><td><input type = "text" id="telefonnr"/></td> <td><div id="feilTelefonnr"></div></td></tr>
-  <tr><td>Epost</td><td><input type = "text" id="epost"/></td> <td><div id ="feilEpost"></div></td></tr>
+  <tr><td>Fornavn</td><td><input type ="text" id="fornavn"/></td> <td><div id ="feilFornavn" style="color:red"></div></td></tr>
+  <tr><td>Etternavn</td><td><input type = "text" id="etternavn"/></td> <td><div id ="feilEtternavn" style="color:red"></div></td></tr>
+  <tr><td>Telefonnr</td><td><input type = "text" id="telefonnr"/></td> <td><div id="feilTelefonnr" style="color:red"></div></td></tr>
+  <tr><td>Epost</td><td><input type = "text" id="epost"/></td><td> <div id ="feilEpost" style="color:red"></div></td></tr>
 </table>
 
-    <!--Oppretter en knapp for å kjøpe billett-->
     <br>
     <section>
         <button onclick ="kjøpeBillett()"> Kjøp billett </button>
@@ -48,11 +46,9 @@
     <h2> Alle billetter</h2>
     <div id ="viseKjøpteBilletter"></div>
 
-    <!--Oppretter en knapp for å kunne slette alle billettene-->
 <section>
 <button onclick = "slettAlleBilletter()"> Slett alle billettene</button>
 </section>
-
 
 </body>
 </html>

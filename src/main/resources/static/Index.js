@@ -1,5 +1,5 @@
-
- const kinoBilletter=[];
+   //Oppretter et array
+const kinoBilletter=[];
 
 //funksjon for å velge film
     function velgFilm() {
@@ -9,9 +9,8 @@
 function antall(){
         document.getElementById("antall").value;
 }
-//Funksjon for å kjøpe billett og informasjonen som blir lagret når man trykker på knappen "kjøp billett"
+//Funksjon for å kjøpe billett og lagrer det som blir skrevet inn
  function kjøpeBillett() {
-
      const film = document.getElementById("film").value;
      const antall = document.getElementById("antall").value;
      const fornavn = document.getElementById("fornavn").value;
@@ -19,15 +18,14 @@ function antall(){
      const telefonnr = document.getElementById("telefonnr").value;
      const epost = document.getElementById("epost").value;
 
-     //lager en funksjon for å tømme feilmeldingene når man får kjøpt billett
+  //Lager en funksjon for å tømme feilmeldingene når man får kjøpt billett og skrevet inn rikitg
     document.getElementById("feilAntall").innerHTML="";
     document.getElementById("feilFornavn").innerHTML="";
     document.getElementById("feilEtternavn").innerHTML="";
     document.getElementById("feilTelefonnr").innerHTML="";
     document.getElementById("feilEpost").innerHTML="";
 
-
-     //lager if setninger for hver enkelt antall, fornavn,etternavn, telefonnr og epost
+   //Her har jeg if-setninger (for å få frem feilmeldinger) for antall, fornavn,etternavn,telefonnr og epost.
      if (isNaN(antall) || antall <=0) {
          document.getElementById("feilAntall").innerHTML = "Feil, skriv inn et tall";
      }
@@ -40,11 +38,12 @@ function antall(){
      if (telefonnr.length !== 8 ||isNaN(telefonnr)) {
          document.getElementById("feilTelefonnr").innerHTML = "Feil skrevet inn telefonnr, skriv et telefonnr med 8 siffer";
      }
+     //Her har jeg brukt en REGEX for validering av epost
      if (!/\S+@\S+\.\S+/.test(epost)){
          document.getElementById("feilEpost").innerHTML = "Feil skrevet inn epost, prøv på nytt";
      }
      else {
-             //oppretter objekt for person
+       //Oppretter objekt for person
              const person = {
                  film: film,
                  antall: antall,
@@ -53,8 +52,7 @@ function antall(){
                  telefonnr: telefonnr,
                  epost: epost,
              };
-
-             //skriver kode for å tømme arrayet
+        //Skriver kode for å tømme arrayet
              kinoBilletter.push(person);
              document.getElementById("film").value = "";
              document.getElementById("antall").value = "";
@@ -63,11 +61,11 @@ function antall(){
              document.getElementById("telefonnr").value = "";
              document.getElementById("epost").value = "";
 
-             //viser de kjøpte billettene
+          //Viser de kjøpte billettene
              viskjøptBillett()
        }
  }
-//funksjon for å vise de kjøpte bilettene
+    //Funksjon for å vise de kjøpte billettene
      function viskjøptBillett() {
          let ut = "<table><tr>" + "<th>Film</th><th>Antall</th><th>Fornavn</th><th>Etternavn</th><th>Telefonnr</th><th>Epost</th>" + "</tr>";
          for (let k of kinoBilletter) {
