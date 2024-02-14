@@ -25,16 +25,16 @@
     <!-- Her oppretter jeg en input hvor man kan skrive inn antall-->
     <section>
        <label for = "antall"> Antall :  </label>
-        <input type = "text" id = "antall" onchange = "antall()">
+        <input type = "text" id = "antall" style = "width : 10px;>" onchange = "antall()">
+        <div id ="feilAntall"></div>
     </section>
-
 <br>
-    <!--Her oppretter jeg tabell sånn at fornavn,etternavn osv kommer under hverandre.-->
+    <!--Her oppretter jeg tabell sånn at fornavn,etternavn osv kommer under hverandre og legger inn feilmeldinger.-->
 <table>
-  <tr><td>Fornavn</td><td> <input type = "text" id="fornavn"/></td></tr>
-  <tr><td>Etternavn</td><td><input type = "text" id="etternavn"/></td></tr>
-  <tr><td>Telefonnr</td><td><input type = "text" id="telefonnr"/></td></tr>
-  <tr><td>Epost</td><td><input type = "text" id="epost"/></td></tr>
+  <tr><td>Fornavn</td><td><input type ="text" id="fornavn"/></td> <td><div id ="feilFornavn"></div></td></tr>
+  <tr><td>Etternavn</td><td><input type = "text" id="etternavn"/></td> <td><div id ="feilEtternavn"></div></td></tr>
+  <tr><td>Telefonnr</td><td><input type = "text" id="telefonnr"/></td> <td><div id="feilTelefonnr"></div></td></tr>
+  <tr><td>Epost</td><td><input type = "text" id="epost"/></td> <td><div id ="feilEpost"></div></td></tr>
 </table>
 
     <!--Oppretter en knapp for å kjøpe billett-->
@@ -52,6 +52,7 @@
 <section>
 <button onclick = "slettAlleBilletter()"> Slett alle billettene</button>
 </section>
+
 
 </body>
 </html>
