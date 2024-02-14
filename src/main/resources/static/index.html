@@ -17,11 +17,12 @@
           <option> Titanic </option>
           <option> The Notebook</option>
           <option> Harry potter and the Goblet of fire</option>
+          <option> Mamma mia </option>
       </select>
     </section>
 
 <br>
-
+    <!-- Her oppretter jeg en input hvor man kan skrive inn antall-->
     <section>
        <label for = "antall"> Antall :  </label>
         <input type = "text" id = "antall" onchange = "antall()">
@@ -37,22 +38,21 @@
 </table>
 
 
-    <!--oppretter en knapp for å kjøpe billett-->
+    <!--Oppretter en knapp for å kjøpe billett-->
     <br>
     <section>
         <button onclick ="kjøpeBillett()"> Kjøp billett </button>
         <div id = "kjøpBillett" onclick ="kjøpeBillett()"></div>
     </section>
 
-
-<h2> Alle billetter</h2>
+    <!--Oppretter en felt for alle billetter og hvor alle billettene vises-->
+    <h2> Alle billetter</h2>
     <div id ="viseKjøpteBilletter"></div>
 
-
+    <!--Oppretter en knapp for å kunne slette alle billettene-->
 <section>
 <button onclick = "slettAlleBilletter()"> Slett alle billettene</button>
 </section>
-    <!--Oppretter en knapp for å kunne slette alle billettene-->
 
 </body>
 </html>

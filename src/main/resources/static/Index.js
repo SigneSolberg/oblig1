@@ -1,5 +1,4 @@
 
-
 const kinoBilletter=[];
 
      //funkjson for å velge film
@@ -21,6 +20,7 @@ function antall(){
     const telefonnr = document.getElementById("telefonnr").value;
     const epost = document.getElementById("epost").value;
 
+    //oppretter array for person
     const person = {
     film : film,
     antall : antall,
@@ -39,9 +39,11 @@ function antall(){
  document.getElementById("etternavn").value = "";
  document.getElementById("telefonnr").value= "";
   document.getElementById("epost").value= "";
+
+   //viser de kjøpebilettene
   viskjøptBillett()}
 
-
+ //funksjon for å vise de kjøptebilettene
 function viskjøptBillett() {
     let ut = "<table><tr>" + "<th>Film</th><th>Antall</th><th>Fornavn</th><th>Etternavn</th><th>Telefonnr</th><th>Epost</th>" + "</tr>";
     for (let k of kinoBilletter) {
@@ -49,15 +51,14 @@ function viskjøptBillett() {
         ut += "<td>" +k.film+ "</td><td>"+ k.antall+ "</td><td>"+ k.fornavn + "</td><td>" + k.etternavn + "</td><td>" + k.telefonnr + "</td><td>" + k.epost + "</td>";
         ut += "</tr>";
     }
-
     document.getElementById("viseKjøpteBilletter").innerHTML = ut;
-
 }
-    //oppretter funskjon for å vise de kjøpte billettene
-function slettAlleBilletter(){
-    kinoBilletter.length = 0;{
-        document.getElementById("viseKjøpteBilletter").innerHTML = "Alle billettene har blitt slettet";
-    }
+    //oppretter funskjon for å slette de kjøpte billettene ved at man trykker på "slett all billetter)
+    function slettAlleBilletter() {
+    kinoBilletter.length = 0;
+        {
+            document.getElementById("viseKjøpteBilletter").innerHTML = "Alle billettene har blitt slettet";
+        }
 }
 
 
