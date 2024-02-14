@@ -1,17 +1,15 @@
 
 const kinoBilletter=[];
 
-     //funkjson for å velge film
+//funkjson for å velge film
     function velgFilm() {
     ut += "FilmValg:" + document.getElementById("film").value;
-
 }
 //Funksjonen hvor man velger antall billetter
 function antall(){
         document.getElementById("antall").value;
-
 }
-//Funksjon for å kjøpebillet samt input av tekst
+//Funksjon for å kjøpe billett og informasjonen som blir lagret når man trykker på knappen "kjøp billett"
     function kjøpeBillett() {
     const film = document.getElementById("film").value;
     const antall= document.getElementById("antall").value;
@@ -20,7 +18,7 @@ function antall(){
     const telefonnr = document.getElementById("telefonnr").value;
     const epost = document.getElementById("epost").value;
 
-    //oppretter array for person
+  //oppretter objekt for person
     const person = {
     film : film,
     antall : antall,
@@ -40,10 +38,10 @@ function antall(){
  document.getElementById("telefonnr").value= "";
   document.getElementById("epost").value= "";
 
-   //viser de kjøpebilettene
+ //viser de kjøpebilettene
   viskjøptBillett()}
 
- //funksjon for å vise de kjøptebilettene
+//funksjon for å vise de kjøpte bilettene
 function viskjøptBillett() {
     let ut = "<table><tr>" + "<th>Film</th><th>Antall</th><th>Fornavn</th><th>Etternavn</th><th>Telefonnr</th><th>Epost</th>" + "</tr>";
     for (let k of kinoBilletter) {
@@ -53,12 +51,12 @@ function viskjøptBillett() {
     }
     document.getElementById("viseKjøpteBilletter").innerHTML = ut;
 }
-    //oppretter funskjon for å slette de kjøpte billettene ved at man trykker på "slett all billetter)
+    //oppretter en funksjon for å slette de kjøpte billettene ved at man trykker på (slett alle billetter)
     function slettAlleBilletter() {
     kinoBilletter.length = 0;
         {
-            document.getElementById("viseKjøpteBilletter").innerHTML = "Alle billettene har blitt slettet";
-        }
+    document.getElementById("viseKjøpteBilletter").innerHTML = "Alle billettene har blitt slettet";
+  }
 }
 
 
