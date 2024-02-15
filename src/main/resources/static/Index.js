@@ -1,15 +1,15 @@
    //Oppretter et array
 const kinoBilletter=[];
 
-//funksjon for å velge film
+//Oppretter en  funksjon for å velge film
     function velgFilm() {
-    ut += "FilmValg:" + document.getElementById("film").value;
+    document.getElementById("film").value;
 }
 //Funksjonen hvor man velger antall billetter
 function antall(){
         document.getElementById("antall").value;
 }
-//Funksjon for å kjøpe billett og lagrer det som blir skrevet inn
+//Funksjon for å kjøpe billett og lagrer det som blir skrevet inn i input feltene
  function kjøpeBillett() {
      const film = document.getElementById("film").value;
      const antall = document.getElementById("antall").value;
@@ -18,7 +18,7 @@ function antall(){
      const telefonnr = document.getElementById("telefonnr").value;
      const epost = document.getElementById("epost").value;
 
-  //Lager en funksjon for å tømme feilmeldingene når man får kjøpt billett og skrevet inn rikitg
+  //koden under vil tømme feilmeldingene når man får kjøpt billett og skrevet inn rikitg informasjon
     document.getElementById("feilAntall").innerHTML="";
     document.getElementById("feilFornavn").innerHTML="";
     document.getElementById("feilEtternavn").innerHTML="";
@@ -26,21 +26,26 @@ function antall(){
     document.getElementById("feilEpost").innerHTML="";
 
    //Her har jeg if-setninger (for å få frem feilmeldinger) for antall, fornavn,etternavn,telefonnr og epost.
-     if (isNaN(antall) || antall <=0) {
-         document.getElementById("feilAntall").innerHTML = "Feil, skriv inn et tall";
+     if (antall <=0 || isNaN(antall)) {
+         document.getElementById("feilAntall").innerHTML
+             = "Feil, skriv inn et heltall";
      }
      if (fornavn.length === 0 || !isNaN(fornavn)) {
-         document.getElementById("feilFornavn").innerHTML = "Feil skrevet inn fornavn, skriv kun med bokstaver";
+         document.getElementById("feilFornavn").innerHTML
+             = "Feil skrevet, skriv kun med bokstaver";
      }
      if (etternavn.length === 0 || !isNaN(etternavn)){
-         document.getElementById("feilEtternavn").innerHTML = "Feil skrevet inn etternavn, skriv kun med bokstaver";
+         document.getElementById("feilEtternavn").innerHTML
+             = "Feil skrevet, skriv kun med bokstaver";
      }
      if (telefonnr.length !== 8 ||isNaN(telefonnr)) {
-         document.getElementById("feilTelefonnr").innerHTML = "Feil skrevet inn telefonnr, skriv et telefonnr med 8 siffer";
+         document.getElementById("feilTelefonnr").innerHTML
+             = "Feil skrevet, skriv et telefonnr med 8 siffer";
      }
      //Her har jeg brukt en REGEX for validering av epost
-     if (!/\S+@\S+\.\S+/.test(epost)){
-         document.getElementById("feilEpost").innerHTML = "Feil skrevet inn epost, prøv på nytt";
+     if(!/\S+@\S+\.\S+/.test(epost)){
+         document.getElementById("feilEpost").innerHTML
+             = "Feil skrevet epost, prøv på nytt";
      }
      else {
        //Oppretter objekt for person
@@ -67,10 +72,13 @@ function antall(){
  }
     //Funksjon for å vise de kjøpte billettene
      function viskjøptBillett() {
-         let ut = "<table><tr>" + "<th>Film</th><th>Antall</th><th>Fornavn</th><th>Etternavn</th><th>Telefonnr</th><th>Epost</th>" + "</tr>";
+         let ut = "<table><tr>" + "<th>Film</th><th>Antall</th>" +
+             "<th>Fornavn</th><th>Etternavn</th><th>Telefonnr</th><th>Epost</th>" + "</tr>";
          for (let k of kinoBilletter) {
              ut += "<tr>";
-             ut += "<td>" + k.film + "</td><td>" + k.antall + "</td><td>" + k.fornavn + "</td><td>" + k.etternavn + "</td><td>" + k.telefonnr + "</td><td>" + k.epost + "</td>";
+             ut += "<td>" + k.film + "</td><td>" + k.antall
+                 +"</td><td>" + k.fornavn + "</td><td>" + k.etternavn +"</td><td>"
+                 + k.telefonnr + "</td><td>" + k.epost + "</td>";
              ut += "</tr>";
          }
          document.getElementById("viseKjøpteBilletter").innerHTML = ut;
@@ -79,7 +87,7 @@ function antall(){
      function slettAlleBilletter() {
          kinoBilletter.length = 0;
          {
-             document.getElementById("viseKjøpteBilletter").innerHTML = "Alle billettene har blitt slettet";
+      document.getElementById("viseKjøpteBilletter").innerHTML = "Alle billettene har blitt slettet";
          }
      }
 
